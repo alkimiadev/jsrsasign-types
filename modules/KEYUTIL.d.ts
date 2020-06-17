@@ -396,6 +396,7 @@ declare namespace jsrsasign {
                 | KJUR.crypto.DSA
                 | KJUR.jws.JWS.JsonWebKey
                 | { n: string; e: string }
+                | { n: string; e: string, d: string, p: string, q: string, dq: string, dp: string, co: string }
                 | string,
             passcode?: string | null,
             hextype?: string,
@@ -460,7 +461,7 @@ declare namespace jsrsasign {
             encAlg?: string,
             hexType?: string,
             ivsaltHex?: string,
-        ): void;
+        ): string;
 
         /**
          * get RSAKey/DSA/ECDSA public key object from PEM formatted PKCS#10 CSR string
